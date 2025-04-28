@@ -22,17 +22,29 @@
 
 ---
 
+## 常见失败原因
+
+- **目录名需为英文**：上传目录路径请使用英文字符，避免中文或特殊符号。
+- **文件需大于 2MB**：文件小于 2MB 可能会被拒绝上传。
+- **禁止违规内容**：不要上传违规文件名或违规视频，否则会被平台拦截。
+- **接口返回示例**：
+  ```json
+  { "status": 400, "message":"request cpp error[complete file failed!]" }
+  ```
+
+---
+
 ## 使用方法
 
 ### 1. 安装依赖
 
 ```bash
-pip install requests
+pip install -r requirements.txt
 ```
 
 ### 2. 配置参数
 
-编辑 `夸克/QuarkUp.py`，填写你的 `file_path`、`cookies`、`pdir_fid` 等必要参数。
+编辑 `QuarkUp.py`，填写你的 `file_path`、`cookies`、`pdir_fid` 等必要参数。
 
 ```python
 # 需要上传的文件路径，用户需自行填写
@@ -49,13 +61,13 @@ pdir_fid = ""  # 例如 "47643a1fd06c449372498374242874"
 ### 3. 运行脚本
 
 ```bash
-python 夸克/QuarkUp.py
+python QuarkUp.py
 ```
 
 > **说明：**
 >
-> - Windows 下可直接双击或用 `python 夸克/QuarkUp.py` 运行。
-> - macOS/Linux 下用 `python3 夸克/QuarkUp.py` 运行。
+> - Windows 下可直接双击或用 `python QuarkUp.py` 运行。
+> - macOS/Linux 下用 `python3 QuarkUp.py` 运行。
 > - 路径分隔符请根据系统调整（Windows 用 `\`，macOS/Linux 用 `/`）。
 
 ### 4. 查看输出
